@@ -2,6 +2,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 import Navbar from "./Components/Navbar";
 import SocialIcon from "./Components/SocialIcon";
 import Typewriter from "./Components/Typewriter";
+import About from "./Components/About";
 
 export default function Home() {
   return (
@@ -18,18 +19,27 @@ export default function Home() {
                 colors={["#f9ce34", "#ee2a7b", "#6228d7"]}
               />
             </a>
-            <SocialIcon
-              icon={<FaLinkedin size={20} className="rounded-md" />}
-              colors={["#0077B5", "#00A0DC", "#0077B5"]}
-            />
-            <SocialIcon
-              icon={<FaTiktok size={20} className="rounded-md" />}
-              colors={["#25F4EE", "#FE2C55", "#000000"]}
-            />
-            <SocialIcon
-              icon={<FaGithub size={20} className="rounded-md" />}
-              colors={["#333333", "#6e5494", "#333333"]}
-            />
+
+            <a href="https://www.linkedin.com/in/bintang-yudha-putra-purnomo-120117324/?locale=en_US" target="_blank" rel="noopener noreferrer">
+              <SocialIcon
+                icon={<FaLinkedin size={20} className="rounded-md" />}
+                colors={["#0077B5", "#00A0DC", "#0077B5"]}
+              />
+            </a>
+
+            <a href="https://github.com/Bibintanggg" target="_blank" rel="noopener noreferrer">
+              <SocialIcon
+                icon={<FaTiktok size={20} className="rounded-md" />}
+                colors={["#25F4EE", "#FE2C55", "#000000"]}
+              />
+            </a>
+
+            <a href="https://www.instagram.com/bintang.ydha_" target="_blank" rel="noopener noreferrer">
+              <SocialIcon
+                icon={<FaGithub size={20} className="rounded-md" />}
+                colors={["#333333", "#6e5494", "#333333"]}
+              />
+            </a>
           </div>
           <div className="flex flex-col items-center text-center pt-3">
             <h1 className="font-bold text-2xl md:text-4xl mb-0.5">Hii! I`m Bintang Yudha</h1>
@@ -39,6 +49,12 @@ export default function Home() {
         </div>
 
       </div >
+
+      <div className="flex items-center justify-center ">
+        <div>
+          <About/>
+        </div>
+      </div>
     </div >
   );
 }

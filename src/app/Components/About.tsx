@@ -36,6 +36,12 @@ export default function About() {
         { id: 7, icon: <DiJavascript size={30} />, className: "text-yellow-300" },
     ]
 
+    const learning = [
+        { id: 1, icon: <FaGolang size={30} />, className: "text-blue-500" },
+        { id: 2, icon: <SiTensorflow size={30} />, className: "text-yellow-500" },
+        { id: 3, icon: <FaPython size={30} />, className: "text-yellow-500" },
+    ]
+
     return (
         <div className="flex flex-col justify-center items-center">
             <h1 className="font-mono text-3xl font-bold mb-4">ABOUT ME</h1>
@@ -109,13 +115,13 @@ export default function About() {
 
                                             <div className="text-sm space-y-4 overflow-y-auto h-[280px] pr-4 thin-scrollbar">
                                                 <p>
-                                                    Hello! I'm Bintang Yudha Putra Purnomo, a passionate technology enthusiast from Jakarta, Indonesia.
-                                                    Currently, I'm pursuing my education at SMKN 46 Jakarta, where I'm developing my skills in software development.
+                                                    Hello! I`m Bintang Yudha Putra Purnomo, a passionate technology enthusiast from Jakarta, Indonesia.
+                                                    Currently, I`m pursuing my education at SMKN 46 Jakarta, where I`m developing my skills in software development.
                                                 </p>
 
                                                 <p>
                                                     My journey in technology began when I was first introduced to programming in school. Since then,
-                                                    I've developed a strong passion for web development.
+                                                    I`ve developed a strong passion for web development.
                                                 </p>
 
                                                 <h2 className="font-bold mt-4 text-blue-400">Technical Skills</h2>
@@ -128,8 +134,8 @@ export default function About() {
 
                                                 <h2 className="font-bold mt-4 text-blue-400">Hobbies & Interests</h2>
                                                 <p>
-                                                    When I'm not coding, I enjoy listening to music (check my favorites below!), playing games,
-                                                    and keeping up with the latest tech trends. I'm particularly interested in how AI is shaping
+                                                    When I`m not coding, I enjoy listening to music (check my favorites below!), playing games,
+                                                    and keeping up with the latest tech trends. I`m particularly interested in how AI is shaping
                                                     our future and love exploring new technologies.
                                                 </p>
                                             </div>
@@ -208,7 +214,9 @@ export default function About() {
                                                     {webDev.map((items) => {
                                                         return (
                                                             <div key={items.id}>
-
+                                                                <div className={`w-14 h-14 flex items-center justify-center rounded-full bg-white/5 ${items.className}`}>
+                                                                    {items.icon}
+                                                                </div>
                                                             </div>
                                                         )
                                                     })}
@@ -223,15 +231,15 @@ export default function About() {
 
                                                 <h1 className="mt-4">Currently Learning</h1>
                                                 <div className="flex items-center gap-4 mt-2">
-                                                    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white/5">
-                                                        <FaGolang className="text-blue-500 w-6 h-6" />
-                                                    </div>
-                                                    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white/5">
-                                                        <SiTensorflow className="text-yellow-500 w-6 h-6" />
-                                                    </div>
-                                                    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white/5">
-                                                        <FaPython className="text-yellow-500 w-6 h-6" />
-                                                    </div>
+                                                    {learning.map((items) => {
+                                                        return (
+                                                            <div key={items.id}>
+                                                                <div className={`w-14 h-14 flex items-center justify-center rounded-full bg-white/5 ${items.className}`}>
+                                                                    {items.icon}
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    })}
                                                 </div>
 
 
@@ -244,7 +252,7 @@ export default function About() {
                     </AnimatePresence>
 
                     <div className="flex gap-2">
-                        <Card shiny className="w-[240px] h-[200px]">
+                        <Card className="w-[240px] h-[200px]">
                             <div className="flex justify-end items-center gap-5 ">
                                 <h1>Highlight</h1>
                                 <div className="w-12 h-12 bg-white/5 flex items-center justify-center rounded-full backdrop-blur-2xl">
@@ -264,7 +272,7 @@ export default function About() {
                             </div>
                         </Card>
 
-                        <Card shiny className="w-[350px] h-[200px] overflow-y-auto thin-scrollbar">
+                        <Card className="w-[350px] h-[200px] overflow-y-auto thin-scrollbar">
                             <div className="flex gap-2 items-center">
                                 <div className="w-12 h-12 bg-white/5 flex items-center justify-center rounded-full backdrop-blur-2xl">
                                     <BiArchive className="w-10 h-6 opacity-50" />

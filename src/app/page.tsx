@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar";
 import SocialIcon from "./Components/SocialIcon";
 import Typewriter from "./Components/Typewriter";
 import About from "./Components/About";
+import GitHubCalendar from "react-github-calendar";
 
 export default function Home() {
   return (
@@ -53,6 +54,9 @@ export default function Home() {
       <div className="flex items-center justify-center ">
         <div>
           <About/>
+          <div className="mt-5">
+          <GitHubCalendar username="bibintanggg" />
+          </div>
         </div>
       </div>
     </div >

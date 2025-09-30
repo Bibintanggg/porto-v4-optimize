@@ -1,9 +1,12 @@
+"use client"
+
 import { FaGithub, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 import Navbar from "./Components/Navbar";
 import SocialIcon from "./Components/SocialIcon";
 import Typewriter from "./Components/Typewriter";
 import About from "./Components/About";
 import GitHubCalendar from "react-github-calendar";
+import React from "react";
 
 export default function Home() {
   return (

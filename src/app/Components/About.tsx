@@ -3,15 +3,16 @@
 import Image from "next/image";
 import Card from "./Card";
 import React from "react";
-import { FaCss3, FaFolder, FaHtml5, FaLaravel, FaPython, FaReact, FaUserNinja } from "react-icons/fa";
+import { FaCss3, FaFolder, FaLaravel, FaPython, FaReact, FaUserNinja } from "react-icons/fa";
 import { IoIosArrowForward, IoIosClose } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
 import { BsTools } from "react-icons/bs";
 import { BiArchive, BiLogoTypescript } from "react-icons/bi";
-import { SiMysql, SiNextdotjs, SiTailwindcss, SiTensorflow, SiTypescript } from "react-icons/si";
+import { SiMysql, SiNextdotjs, SiTailwindcss, SiTensorflow } from "react-icons/si";
 import { DiJavascript } from "react-icons/di";
 import { FaGolang } from "react-icons/fa6";
 import { AiOutlineProject } from "react-icons/ai";
+import { TechIcon, DetailAbout } from "./TechIcon";
 
 export default function About() {
     const [showDetailedAbout, setShowDetailedAbout] = React.useState(false)
@@ -23,10 +24,10 @@ export default function About() {
         { id: 3, icon: <SiTailwindcss size={30} />, className: "text-cyan-400" },
         { id: 4, icon: <FaCss3 size={30} />, className: "text-cyan-400" },
         { id: 5, icon: <FaLaravel size={30} />, className: "text-red-500" },
-        { id: 6, name: "+9" }
+        { id: 6, icon: <span className="font-bold text-lg">+9</span>, name: "+9" }
     ]
 
-    const webDev = [
+    const WEB_DEV = [
         { id: 1, icon: <FaReact size={30} />, className: "text-blue-500" },
         { id: 2, icon: <BiLogoTypescript size={30} />, className: "text-blue-500 " },
         { id: 3, icon: <SiTailwindcss size={30} />, className: "text-cyan-400" },
@@ -36,7 +37,7 @@ export default function About() {
         { id: 7, icon: <DiJavascript size={30} />, className: "text-yellow-300" },
     ]
 
-    const learning = [
+    const LEARNING = [
         { id: 1, icon: <FaGolang size={30} />, className: "text-blue-500" },
         { id: 2, icon: <SiTensorflow size={30} />, className: "text-yellow-500" },
         { id: 3, icon: <FaPython size={30} />, className: "text-yellow-500" },
@@ -154,27 +155,10 @@ export default function About() {
                                             <h3 className="text-sm font-medium text-gray-200">STACK</h3>
                                         </div>
 
-                                        <div className="grid grid-cols-3 gap-2 mt-4">
-                                            {detailAbout.map((item) => (
-                                                item.name === "+9" ? (
-                                                    <button
-                                                        key={item.id}
-                                                        onClick={() => setIsStack(true)} 
-                                                        className={`w-12 h-12 flex items-center justify-center cursor-pointer rounded-full backdrop-blur-2xl border border-gray-700 ${item.className}`}
-                                                    >
-                                                        {item.name}
-                                                    </button>
-                                                ) : (
-                                                    <div
-                                                        key={item.id}
-                                                        className={`w-12 h-12 flex items-center justify-center rounded-full backdrop-blur-2xl border border-gray-700 ${item.className}`}
-                                                    >
-                                                        {item.icon}
-                                                    </div>
-                                                )
-                                            ))}
-
-                                        </div>
+                                        <DetailAbout
+                                        items={detailAbout}
+                                        onShowStack={() => setIsStack(true)}
+                                        />
 
                                     </Card>
                                 )}
@@ -211,15 +195,9 @@ export default function About() {
                                             <div className="flex flex-col">
                                                 <h1>Web Development</h1>
                                                 <div className="grid grid-cols-7 items-center gap-4 mt-2">
-                                                    {webDev.map((items) => {
-                                                        return (
-                                                            <div key={items.id}>
-                                                                <div className={`w-14 h-14 flex items-center justify-center rounded-full bg-white/5 ${items.className}`}>
-                                                                    {items.icon}
-                                                                </div>
-                                                            </div>
-                                                        )
-                                                    })}
+                                                    {WEB_DEV.map((item) => (
+                                                        <TechIcon key={item.id} item={item} size={24} onClick={() => {}}/>
+                                                    ))}
                                                 </div>
 
                                                 <h1 className="mt-4">Database</h1>
@@ -231,15 +209,9 @@ export default function About() {
 
                                                 <h1 className="mt-4">Currently Learning</h1>
                                                 <div className="flex items-center gap-4 mt-2">
-                                                    {learning.map((items) => {
-                                                        return (
-                                                            <div key={items.id}>
-                                                                <div className={`w-14 h-14 flex items-center justify-center rounded-full bg-white/5 ${items.className}`}>
-                                                                    {items.icon}
-                                                                </div>
-                                                            </div>
-                                                        )
-                                                    })}
+                                                    {LEARNING.map((item) => (
+                                                        <TechIcon key={item.id} item={item} size={24} onClick={() => {}}/>
+                                                    ))}
                                                 </div>
 
 

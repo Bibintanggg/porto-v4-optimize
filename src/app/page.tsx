@@ -19,33 +19,33 @@ export default function Home() {
           <div className="flex gap-5 mb-2 backdrop-blur-5xl bg-white/5 w-52 h-10 items-center mx-auto rounded-md justify-center">
             <a href="https://www.instagram.com/bintang.ydha_" target="_blank" rel="noopener noreferrer">
               <SocialIcon
-                icon={<FaInstagram size={20} className="rounded-md" />}
+                icon={<FaInstagram size={20} className="rounded-md" color="white" />}
                 colors={["#f9ce34", "#ee2a7b", "#6228d7"]}
               />
             </a>
 
             <a href="https://www.linkedin.com/in/bintang-yudha-putra-purnomo-120117324/?locale=en_US" target="_blank" rel="noopener noreferrer">
               <SocialIcon
-                icon={<FaLinkedin size={20} className="rounded-md" />}
+                icon={<FaLinkedin size={20} className="rounded-md" color="white" />}
                 colors={["#0077B5", "#00A0DC", "#0077B5"]}
               />
             </a>
 
             <a href="https://github.com/Bibintanggg" target="_blank" rel="noopener noreferrer">
               <SocialIcon
-                icon={<FaTiktok size={20} className="rounded-md" />}
+                icon={<FaTiktok size={20} className="rounded-md" color="white"/>}
                 colors={["#25F4EE", "#FE2C55", "#000000"]}
               />
             </a>
 
             <a href="https://www.instagram.com/bintang.ydha_" target="_blank" rel="noopener noreferrer">
               <SocialIcon
-                icon={<FaGithub size={20} className="rounded-md" />}
+                icon={<FaGithub size={20} className="rounded-md" color="white" />}
                 colors={["#333333", "#6e5494", "#333333"]}
               />
             </a>
           </div>
-          <div className="flex flex-col items-center text-center pt-3">
+          <div className="flex flex-col items-center text-center pt-3 text-white">
             <h1 className="font-bold text-2xl md:text-4xl mb-0.5">Hii! I`m Bintang Yudha</h1>
             <p className="font-normal text-base md:text-lg mb-1">Student from SMKN 46 Jakarta</p>
             <Typewriter words={["TECH ENTHUSIAST", "AI/ML ENTHUSIAST"]} />
@@ -54,7 +54,7 @@ export default function Home() {
 
       </div >
 
-      <div className="flex items-center justify-center ">
+      <div className="flex items-center justify-center bg-[#0a0a0a] text-white">
         <div>
           <About/>
           <div className="mt-5">

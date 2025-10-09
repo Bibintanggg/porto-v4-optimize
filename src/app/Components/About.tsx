@@ -43,7 +43,7 @@ export default function About() {
     ]
 
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center text-white">
             <h1 className="font-mono text-3xl font-bold mb-4">ABOUT ME</h1>
 
             <div className="flex gap-2">

@@ -1,3 +1,5 @@
+import React from "react"
+
 export type TechIconProps = {
     item: {
         id: number

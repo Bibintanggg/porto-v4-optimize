@@ -1,5 +1,6 @@
 "use client"
 
+import { projectData } from "@/data/projects-data"
 import React from "react"
 
 export default function Projects() {
@@ -11,7 +12,11 @@ export default function Projects() {
 
     return (
         <div>
-
+            {projectData.map((items) => (
+                <div key={items.id}>
+                    
+                </div>
+            ))}
         </div>
     )
 }

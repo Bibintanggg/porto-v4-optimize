@@ -1,4 +1,4 @@
-import { TechIconProps } from "@/lib/stackProps";
+import { TechIconProps } from "@/types/stackProps";
 import React from "react"
 
 

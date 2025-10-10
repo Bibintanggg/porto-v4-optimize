@@ -125,14 +125,6 @@ export default function About() {
                                                     I`ve developed a strong passion for web development.
                                                 </p>
 
-                                                <h2 className="font-bold mt-4 text-blue-400">Technical Skills</h2>
-                                                <ul className="list-disc pl-5 space-y-2">
-                                                    <li>Frontend Development: React, TypeScript, Tailwind CSS, NextJS</li>
-                                                    <li>Backend Development: Laravel</li>
-                                                    <li>AI/ML: Basic understanding of machine learning concepts</li>
-                                                    <li>Tools: Git, VS Code, Figma</li>
-                                                </ul>
-
                                                 <h2 className="font-bold mt-4 text-blue-400">Hobbies & Interests</h2>
                                                 <p>
                                                     When I`m not coding, I enjoy listening to music (check my favorites below!), playing games,

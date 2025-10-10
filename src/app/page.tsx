@@ -64,7 +64,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
+      <div className="mt-15">
+        <h1 className="text-3xl text-white text-center font-bold">Showcase</h1>
         <Projects/>
       </div>
     </div >

@@ -7,6 +7,7 @@ import Typewriter from "./Components/Typewriter";
 import About from "./Components/About";
 import GitHubCalendar from "react-github-calendar";
 import React from "react";
+import Projects from "./Components/Projects";
 
 export default function Home() {
   return (
@@ -61,6 +62,10 @@ export default function Home() {
           <GitHubCalendar username="bibintanggg" />
           </div>
         </div>
+      </div>
+
+      <div>
+        <Projects/>
       </div>
     </div >
   );

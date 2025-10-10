@@ -10,3 +10,8 @@ export type ProjectProps = {
     image: string
     icon?: React.ReactNode[]
 }
+
+export type CardProjectProps = {
+    project: ProjectProps
+    children?: React.ReactNode
+}

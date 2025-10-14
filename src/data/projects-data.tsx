@@ -39,7 +39,7 @@ export const projectData: ProjectProps[] = [
         title: "Finance Manager",
         description: "A financial platform that aims to record expenses and income from clients from Thailand (PROJECT MAY NOT BE PUBLISHED :))",
         image: "/assets/projects/financemanage.png",
-        techStack: ['React', 'TypeScript', 'TailwindCSS', 'Laravel', 'Inertia', 'ShadCN', 'Axios', 'Nginx', 'FileZilla', 'Google Auth'],
+        techStack: ['React', 'TypeScript', 'TailwindCSS', 'Laravel', 'Inertia', 'ShadCN'],
         link: "https://github.com/Bibintanggg",
         github: 'https://github.com/Bibintanggg',
         icon: [
@@ -51,8 +51,6 @@ export const projectData: ProjectProps[] = [
             <SiShadcnui key={'shadcn'} size={20} />,
             <SiAxios key={'axios'} size={20} />,
             <SiNginx key={'nginx'} size={20} />,
-            <SiFilezilla key={'filezilla'} size={20} />,
-            <SiGoogleauthenticator  key={'google-auth'} size={20} />,
         ]
     },
     {
@@ -72,8 +70,6 @@ export const projectData: ProjectProps[] = [
             <SiShadcnui key={'shadcn'} size={20} />,
             <SiAxios key={'axios'} size={20} />,
             <SiNginx key={'nginx'} size={20} />,
-            <SiFilezilla key={'filezilla'} size={20} />,
-            <SiGoogleauthenticator  key={'google-auth'} size={20} />,
         ]
     }
 ]

@@ -1,25 +1,19 @@
 "use client"
 
 import { projectData } from "@/data/projects-data"
-import React from "react"
+import React, { useState } from "react"
 import CardProject from "./CardProject"
 import { IoIosArrowForward, IoIosArrowUp, IoIosDownload } from "react-icons/io"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import ExperienceData from "@/data/experience-data"
+import { ExperienceData } from "@/data/experience-data"
+import { useRouter } from "next/navigation"
 
 export default function Projects() {
     const [toggleButton, setToggleButton] = React.useState('projects')
     const [visibleProject, setVisibleProjects] = React.useState(2)
-
-    const handleDownload = (imageUrl: string, fileName: string) => {
-        const link = document.createElement("a")
-        link.href = imageUrl
-        link.download = fileName || 'download'
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-    }
+    const [fileName, setFileName] = React.useState("")
+    const router = useRouter()
 
     const toggleView = (view: string) => {
         setToggleButton(view)
@@ -31,6 +25,17 @@ export default function Projects() {
 
     const showLess = () => {
         setVisibleProjects(2)
+    }
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length > 0) {
+            setFileName(e.target.files[0].name)
+        }
+    }
+
+    const handleViewCertificate = (imagePath: string) => {
+        const encodePath = encodeURIComponent(imagePath)
+        router.push(`/certificate/${encodePath}`)
     }
 
     return (
@@ -102,63 +107,83 @@ export default function Projects() {
                 </>
             ) : (
                 <>
-                    <div className="flex items-center justify-center mt-10 flex-wrap">
-                        {ExperienceData.map((items) => (
-                            <div key={items.id} className="flex items-start gap-4">
+                    <div className="flex items-center justify-center mt-10">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 max-w-4xl">
+                            {ExperienceData.map((items) => (
+                                <div key={items.id} className="flex items-start gap-4">
 
-                                <div className="flex-shrink-0">
-                                    <Image src={items.image} alt={items.title} width={70} height={70} />
-                                </div>
-
-                                <div className="flex flex-col text-white text-base">
-                                    <div className="mb-2">
-                                        <p className="font-medium">{items.title}</p>
-                                        <span className="text-sm">{items.time}</span>
+                                    <div className="flex-shrink-0">
+                                        <Image src={items.image} alt={items.title} width={70} height={70} />
                                     </div>
 
-                                    <ol className="relative border-l border-white/20 ml-2 mt-4">
-                                        <li className="mb-4 ml-4">
-                                            <span className="absolute flex items-center justify-center w-4 h-4 bg-white/50 rounded-full -left-2 ring-4 ring-white/30 dark:ring-gray-900"></span>
-                                            <h3 className="font-medium">{items.subtitle}</h3>
-                                            {items.experience && (
-                                                <>
-                                                    <div className="flex items-center gap-4 my-2">
-                                                        <motion.div
-                                                            className="relative cursor-pointer group"
-                                                            onClick={() => handleDownload(items.experience?.image, 'competition-certificate')}
-                                                            whileHover={{ scale: 1.05 }}
-                                                        >
-                                                            <Image
-                                                                src={items.experience.image}
-                                                                width={50}
-                                                                height={50}
-                                                                alt="sagasitas"
-                                                                className="rounded-full"
-                                                            />
-                                                            <div className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                                                <IoIosDownload className="text-white text-sm" />
+                                    <div className="flex flex-col text-white text-base flex-1">
+                                        <div className="mb-2">
+                                            <p className="font-medium">{items.title}</p>
+                                            <span className="text-sm">{items.time}</span>
+                                        </div>
+
+                                        <ol className="relative border-l border-white/20 ml-2 mt-4">
+                                            <li className="mb-4 ml-4">
+                                                <span className="absolute flex items-center justify-center w-4 h-4 bg-white/50 rounded-full -left-2 ring-4 ring-white/30"></span>
+                                                <div className="ml-4">
+                                                    <h3 className="font-medium">{items.subtitle}</h3>
+                                                    <p className="text-sm mt-2">{items.description}</p>
+                                                </div>
+                                            </li>
+
+                                            {items.experiences && items.experiences.map((exp, index) => (
+                                                <li key={exp.id} className="mb-6 ml-4">
+                                                    <span className="absolute flex items-center justify-center w-4 h-4 bg-blue-400 rounded-full -left-2 ring-4 ring-blue-400/30">
+                                                        <span className="text-xs text-white font-bold">
+                                                            {index + 1}
+                                                        </span>
+                                                    </span>
+                                                    <div className="ml-4">
+                                                        <div className="flex flex-col gap-4 mt-3 p-4">
+                                                            <div className="flex items-center gap-4">
+                                                                <Image src={exp.image} width={50} height={50} alt={exp.title} className="rounded-full" />
+                                                                <div className="flex flex-col">
+                                                                    <p className="text-sm text-gray-300 font-medium">{exp.title}</p>
+                                                                    <p className="text-sm text-gray-300">{exp.time}</p>
+                                                                </div>
                                                             </div>
-                                                        </motion.div>
-                                                        <div className="flex flex-col">
-                                                            <p className="text-sm text-gray-300">{items.experience.title}</p>
-                                                            <p className="text-sm text-gray-300">{items.experience.time}</p>
+                                                            <div className="flex flex-col">
+                                                                <p className="text-sm text-gray-300">{exp.subtitle}</p>
+                                                                <p className="text-sm text-gray-300 line-clamp-3 mt-1">{exp.description}</p>
+                                                            </div>
+                                                            <a
+                                                                href={`/certificate/${encodeURIComponent(exp.certificate)}`}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="border border-blue-400 rounded-lg cursor-pointer hover:bg-blue-400/10 transition-colors"
+                                                            >
+                                                                <div className="flex gap-4 p-2">
+                                                                    <Image
+                                                                        src={exp.certificate}
+                                                                        width={50}
+                                                                        height={50}
+                                                                        alt={exp.title}
+                                                                        className="rounded-lg"
+                                                                    />
+                                                                    <div className="flex flex-col text-sm items-start">
+                                                                        <p>{exp.certificate.split("/").pop()}</p>
+                                                                        <p className="text-xs text-blue-400">Click For Certificate</p>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
                                                         </div>
                                                     </div>
+                                                </li>
+                                            ))}
+                                        </ol>
+                                    </div>
 
-                                                </>
-                                            )}
-                                            <p className="text-sm">{items.description}</p>
-                                        </li>
-                                    </ol>
                                 </div>
-
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </>
             )}
-
-
         </div>
     )
 }

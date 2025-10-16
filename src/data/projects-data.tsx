@@ -39,7 +39,7 @@ export const projectData: ProjectProps[] = [
         title: "Finance Manager",
         description: "A financial platform that aims to record expenses and income from clients from Thailand (PROJECT MAY NOT BE PUBLISHED :))",
         image: "/assets/projects/financemanage.png",
-        techStack: ['React', 'TypeScript', 'TailwindCSS', 'Laravel', 'Inertia', 'ShadCN'],
+        techStack: ['React', 'TypeScript', 'TailwindCSS', 'Laravel', 'Inertia', 'ShadCN', 'Axios', 'Nginx'],
         link: "https://github.com/Bibintanggg",
         github: 'https://github.com/Bibintanggg',
         icon: [

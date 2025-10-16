@@ -3,7 +3,7 @@
 import { projectData } from "@/data/projects-data"
 import React from "react"
 import CardProject from "./CardProject"
-import { IoIosArrowForward, IoIosArrowUp } from "react-icons/io"
+import { IoIosArrowForward, IoIosArrowUp, IoIosDownload } from "react-icons/io"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import ExperienceData from "@/data/experience-data"
@@ -11,6 +11,15 @@ import ExperienceData from "@/data/experience-data"
 export default function Projects() {
     const [toggleButton, setToggleButton] = React.useState('projects')
     const [visibleProject, setVisibleProjects] = React.useState(2)
+
+    const handleDownload = (imageUrl: string, fileName: string) => {
+        const link = document.createElement("a")
+        link.href = imageUrl
+        link.download = fileName || 'download'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+    }
 
     const toggleView = (view: string) => {
         setToggleButton(view)
@@ -110,7 +119,34 @@ export default function Projects() {
                                     <ol className="relative border-l border-white/20 ml-2 mt-4">
                                         <li className="mb-4 ml-4">
                                             <span className="absolute flex items-center justify-center w-4 h-4 bg-white/50 rounded-full -left-2 ring-4 ring-white/30 dark:ring-gray-900"></span>
-                                            <h3 className="font-medium">{typeof items.subtitle === "string" ? items.subtitle : JSON.stringify(items.subtitle)}</h3>
+                                            <h3 className="font-medium">{items.subtitle}</h3>
+                                            {items.experience && (
+                                                <>
+                                                    <div className="flex items-center gap-4 my-2">
+                                                        <motion.div
+                                                            className="relative cursor-pointer group"
+                                                            onClick={() => handleDownload(items.experience?.image, 'competition-certificate')}
+                                                            whileHover={{ scale: 1.05 }}
+                                                        >
+                                                            <Image
+                                                                src={items.experience.image}
+                                                                width={50}
+                                                                height={50}
+                                                                alt="sagasitas"
+                                                                className="rounded-full"
+                                                            />
+                                                            <div className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                                                <IoIosDownload className="text-white text-sm" />
+                                                            </div>
+                                                        </motion.div>
+                                                        <div className="flex flex-col">
+                                                            <p className="text-sm text-gray-300">{items.experience.title}</p>
+                                                            <p className="text-sm text-gray-300">{items.experience.time}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </>
+                                            )}
                                             <p className="text-sm">{items.description}</p>
                                         </li>
                                     </ol>

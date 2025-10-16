@@ -55,21 +55,38 @@ export const projectData: ProjectProps[] = [
     },
     {
         id: 3,
-        title: "Finance Manager",
-        description: "A financial platform that aims to record expenses and income from clients from Thailand (PROJECT MAY NOT BE PUBLISHED :))",
-        image: "/assets/projects/financemanage.png",
-        techStack: ['React', 'TypeScript', 'TailwindCSS', 'Laravel', 'Inertia', 'ShadCN', 'Axios', 'Nginx', 'FileZilla', 'Google Auth'],
+        title: "Talent Force",
+        description: "An employee management web app that provides features for logbook tracking, permit requests, and work monitoring.",
+        image: "/assets/projects/talent-force.png",
+        techStack: ['React', 'TailwindCSS', 'Typescript', 'Laravel Inertia', 'Laravel', 'ShadCN', 'Swagger'],
         link: "https://github.com/Bibintanggg",
         github: 'https://github.com/Bibintanggg',
         icon: [
             <FaReact key={'react'} size={20} />,
-            <SiTypescript key={'typescript'} size={20} />,
             <SiTailwindcss key={'tailwind'} size={20} />,
-            <FaLaravel key={'laravel'} size={20} />,
+            <SiTypescript key={'typescript'} size={20} />,
             <SiInertia key={'inertia'} size={20} />,
+            <FaLaravel key={'laravel'} size={20} />,
             <SiShadcnui key={'shadcn'} size={20} />,
-            <SiAxios key={'axios'} size={20} />,
-            <SiNginx key={'nginx'} size={20} />,
+            <SiSwagger key={'swagger'} size={20}/>
         ]
-    }
+    },
+    {
+        id: 4,
+        title: "Lecturer Quiz App",
+        description: "An employee management web app that provides features for logbook tracking, permit requests, and work monitoring.",
+        image: "/assets/projects/talent-force.png",
+        techStack: ['React', 'TailwindCSS', 'Typescript', 'Laravel Inertia', 'Laravel', 'ShadCN', 'Swagger'],
+        link: "https://github.com/Bibintanggg",
+        github: 'https://github.com/Bibintanggg',
+        icon: [
+            <FaReact key={'react'} size={20} />,
+            <SiTailwindcss key={'tailwind'} size={20} />,
+            <SiTypescript key={'typescript'} size={20} />,
+            <SiInertia key={'inertia'} size={20} />,
+            <FaLaravel key={'laravel'} size={20} />,
+            <SiShadcnui key={'shadcn'} size={20} />,
+            <SiSwagger key={'swagger'} size={20}/>
+        ]
+    },
 ]

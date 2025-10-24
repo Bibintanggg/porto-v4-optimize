@@ -8,6 +8,7 @@ import About from "./Components/About";
 import GitHubCalendar from "react-github-calendar";
 import React from "react";
 import Projects from "./Components/Projects";
+import Contact from "./Components/Contact";
 
 export default function Home() {
   return (
@@ -67,6 +68,14 @@ export default function Home() {
       <div className="mt-15">
         <h1 className="text-3xl text-white text-center font-bold">Showcase</h1>
         <Projects id="showcase"/>
+      </div>
+
+      <div className="mt-15">
+        <h1 className="text-3xl text-white text-center font-bold">Contact</h1>
+
+        <div className="mt-10 mb-10">
+        <Contact id="showcase"/>
+        </div>
       </div>
     </div >
   );

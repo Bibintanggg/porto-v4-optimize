@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Card from "./Card";
 import { FaCommentDots } from "react-icons/fa";
+import { FieldDemo } from "./Field";
 
 export default function ContactSection() {
     return (
@@ -13,8 +14,8 @@ export default function ContactSection() {
                 </div>
                 <hr className="border rounded-full w-full border-white/20"/>
 
-                <form action="">
-                    
+                <form action="" className="mt-5">
+                    <FieldDemo/>
                 </form>
                 </Card>
             </Card>

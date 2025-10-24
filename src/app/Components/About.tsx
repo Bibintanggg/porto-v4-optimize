@@ -14,7 +14,7 @@ import { FaGolang } from "react-icons/fa6";
 import { AiOutlineProject } from "react-icons/ai";
 import { TechIcon, DetailAbout } from "./TechIcon";
 
-export default function About() {
+export default function About({ id }: {id: string}) {
     const [showDetailedAbout, setShowDetailedAbout] = React.useState(false)
     const [isStack, setIsStack] = React.useState(false)
 
@@ -44,7 +44,7 @@ export default function About() {
     ]
 
     return (
-        <div className="flex flex-col justify-center items-center text-white">
+        <div className="flex flex-col justify-center items-center text-white" id={id}>
             <h1 className="font-mono text-3xl font-bold mb-4">ABOUT ME</h1>
 
             <div className="flex gap-2">

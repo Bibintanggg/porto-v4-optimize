@@ -11,12 +11,12 @@ import Projects from "./Components/Projects";
 
 export default function Home() {
   return (
-    <div className="relative h-full w-full min-h-[200vh] overflow-x-hidden font-mono">
+    <div className="relative h-full w-full min-h-[200vh] overflow-x-hidden font-mono" id="home">
       <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
       <div className="relative z-10 min-h-screen flex flex-col md:flex-row justify-center items-center px-3 md:px-6">
         <Navbar />
 
-        <div className="pt-3 md:pt-6 flex flex-col justify-center">
+        <div className="pt-3 md:pt-6 flex flex-col justify-center" id="home">
           <div className="flex gap-5 mb-2 backdrop-blur-5xl bg-white/5 w-52 h-10 items-center mx-auto rounded-md justify-center">
             <a href="https://www.instagram.com/bintang.ydha_" target="_blank" rel="noopener noreferrer">
               <SocialIcon
@@ -57,7 +57,7 @@ export default function Home() {
 
       <div className="flex items-center justify-center bg-[#0a0a0a] text-white">
         <div>
-          <About/>
+          <About id="about"/>
           <div className="mt-5">
           <GitHubCalendar username="bibintanggg" />
           </div>
@@ -66,7 +66,7 @@ export default function Home() {
 
       <div className="mt-15">
         <h1 className="text-3xl text-white text-center font-bold">Showcase</h1>
-        <Projects/>
+        <Projects id="showcase"/>
       </div>
     </div >
   );
